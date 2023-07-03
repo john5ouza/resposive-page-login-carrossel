@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login .carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.left-login .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: slide 6s infinite;
+}
+
+@keyframes slide {
+    0%, 33.33% { opacity: 0; }
+    33.33%, 66.66% { opacity: 1; }
+    66.66%, 100% { opacity: 0; }
+}
+
+.slide-items > .active {
+    opacity: 1 !important;
+    animation-duration: 6s !important;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: rgb(255, 255, 255);
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.card-login-image {
+    width: 10vw;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    background: #f5f4f4;
+    color: #191919;
+    font-size: 12px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: #191919;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+    color: #6c756c;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    background: #3db7f2;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.slide-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.slide-navigation .slide-prev,
+.slide-navigation .slide-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3db7f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.slide-navigation .slide-prev:hover,
+.slide-navigation .slide-next:hover {
+    background: #34a1db;
+}
+
+.slide-navigation .slide-prev {
+    margin-right: 15px;
+}
+
+.slide-navigation .slide-next {
+    margin-left: 15px;
+}
+
+.slide-items > .active {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-login {
+        flex-direction: column;
+    }
+
+    .left-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-login-image {
+        width: 60vw;
+    }
+
+    .card-login-image{
+        width: 40%;
+    }
+
+    .card-login {
+        width: 90%;
+    }
+}
